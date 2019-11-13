@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the as inside the tab */
+.tab a {
+  display: block;
+  background-color: green;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of as on hover */
+.tab a:hover {
+  background-color: blue;
+}
+
+/* Create an active/current "tab a" class */
+.tab a.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.main-section {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+</style>
+</head>
+<body>
+	<main id="main-doc">
+		<h2>Learn Java the easy way!!!</h2>
+		<p><i>Brought to you by Nakabugo Irene</i></p>
+
+		<nav id="navbar" class="tab">
+			<header>
+				Menu
+			</header>
+			<a class="nav-link" onclick="openModule(event, 'Introduction_to_Java')" id="defaultOpen">Introduction to Java</a>
+			<a class="nav-link" onclick="openModule(event, 'Characteristics_of_Java')">Characteristics of Java</a>
+			<a class="nav-link" onclick="openModule(event, 'Running_a_simple_Java_program')">Running a simple Java program</a>
+			<a class="nav-link" onclick="openModule(event, 'Some_keywords_used')">Some keywords used</a>
+			<a class="nav-link" onclick="openModule(event, 'Data_types_and_Variables')">Data types and Variables</a>
+			<a class="nav-link" onclick="openModule(event, 'Applicability_of_Java')">Applicability of Java</a>
+		  
+		  	<a class="nav-link" onclick="openModule(event, 'Programming_Errors')">Programming Errors</a>
+		</nav>
+
+		<section class="main-section" id="Introduction_to_Java">
+			<header>
+				Introduction to Java
+			</header>
+			<p>
+						Java was developed by a team led by James
+						 at Sun Microsystems. Originally called Oak, it was designed in 1991 for use in
+						embedded chips in consumer electronic appliances.</p>
+
+			<p>In 1995, renamed Java, it was	
+				redesigned for developing Internet applications.</p> 
+
+				<p>Java has become enormously popular. Its rapid rise and wide acceptance can be traced to
+				its design characteristics, particularly its promise that you can write a program once and run it
+				anywhere</p>
+
+			
+			<code>
+				<p>For the history of Java, see java.sun.com/features/1998/05/birthday.html.</p>
+			</code>
+		</section>
+
+		<section class="main-section" id="Characteristics_of_Java">
+			<header>
+				Characteristics of Java
+			</header>
+
+			<p>Some characteristics include:
+			<li><ul> Java is simple.</ul></li>
+			<li><ul> It is object oriented.</ul></li>
+			<li><ul> It is distributed.</ul></li>
+			<li><ul> It is interpreted.</ul></li>
+			<li><ul> It is robust.</ul></li>
+			<li><ul> It is secure.</ul></li>
+			<li><ul> It is architecture neutral.</ul></li>
+			<li><ul> It is robust.</ul></li>
+			<li><ul> It is portable.</ul></li>
+			<li><ul> It is multithreaded.</ul></li>
+			<li><ul> It offers high performance.</ul></li> 
+			</p>
+			
+
+		</section>
+
+		<section class="main-section"  id="Running_a_simple_Java_program">
+			<header>
+				Running a simple Java program
+			</header>
+			<p>This simple program outputs Hello Word to the console</p>
+
+			<p>
+				\tpublic class HelloWorld{\n
+				\t\tpublic static void main(String[] args){\n
+				\t\t\tSystem.out.println("Hello World.");\n
+							\t\t\t\t	}\n
+					\t}\n
+		</p>
+		</section>
+
+		<section class="main-section"  id="Some_keywords_used">
+			<header>
+				Some keywords used
+			</header>
+			<p>main, void, public, class etc</p>
+		</section>
+
+		<section class="main-section"  id="Data_types_and_Variables">
+			<header>
+				Data types and Variables
+			</header>
+			<p>Variables are used to store values to be used later in a program. \nThey are called variables because their values can be changed</p>
+			<p>Data types include: intergers, boolean, characacter, double amongst others</p>
+			<p><code>For example:</code>\n int x=10;\n  The data type is <i>int</i> meaning integer, the variable is<i> x</i>, and the value is <i>10</i></p>
+		</section>
+
+		<section class="main-section"  id="Applicability_of_Java">
+			<header>
+				Applicability of Java
+			</header>
+			<p>It can be used to develop mobile applications, desktop applications amongst others</p>
+		</section>
+
+		<section class="main-section" id="Programming_Errors">
+			<header>
+				Programming Errors
+			</header>
+			<p>Programming errors are unavoidable, even for experienced programmers.\n Errors can be categorized
+							into three types: <code>syntax errors, runtime errors, and logic errors.</code> </p>
+		</section>
+
+	</main>
+
+<script>
+function openModule(module, moduleTitle) {
+  var i, main-section, nav-link;
+  main-section = document.getElementsByClassName("main-section");
+  for (i = 0; i < main-section.length; i++) {
+    main-section[i].style.display = "none";
+  }
+  nav-link = document.getElementsByClassName("nav-link");
+  for (i = 0; i < nav-link.length; i++) {
+    nav-link[i].className = nav-link[i].className.replace(" active", "");
+  }
+  document.getElementById(moduleTitle).style.display = "block";
+  module.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
